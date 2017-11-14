@@ -1,0 +1,67 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="{{configuration param=" lang"}}">
+  <head>
+    <meta charset="{{configuration param=" charset"}}">
+    {{metarobots}}
+    <meta name="keywords" content="{{configuration param=" meta_keywords"}}"/>
+    <meta name="description" content="{{configuration param=" meta_description"}}"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <title>{{configuration param="wakka_name"}}
+      :
+      {{currentpage}}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{configuration param=" theme_path"}}images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="{{configuration param=" theme_path"}}images/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="{{configuration param=" theme_path"}}images/favicon.png"/>
+    {{linkstyle}}
+    {{linkrss}}
+  </head>
+  <body {{parambody}}>
+    <header>
+      {{include page="PageHeader" doubleclic="1"}}
+    </header>
+    <nav>
+      {{include page="PageMenuHaut" doubleclic="1" actif="1"}}
+    </nav>
+    <section id="main" role="main">
+      <div id="PageMenu">
+        <div id="searchbox">
+          <form method="get" action="http://www.google.fr/search" class="form-inline">
+            <div class="input-group">
+              <input name="hl" value="fr" type="hidden"/>
+              <input name="q" class="form-control" placeholder="Rech. Google" onFocus="if(this.value=='Rech. Google')this.value='';" onBlur="if(this.value=='')this.value='Rech. Google';" type="text"/>
+              <span class="input-group-btn">
+                <button name="btnG" class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+          <br/>
+          <form method="get" action="http://0489998g.esidoc.fr/search.php?" class="form-inline">
+            <div class="input-group">
+              <input name="lookfor" class="form-control" type="text" placeholder="Dans la base du CDI" onFocus="if(this.value=='Rech. ')this.value='';" onBlur="if(this.value=='')this.value='Dans la base du CDI';">
+              <span class="input-group-btn">
+                <button name="Rechercher" class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+        {{include page="PageMenu" doubleclic="1" actif="1"}}
+      </div>
+      <div id="Page" {{doubleclic}}>
+        {WIKINI_PAGE}
+        {{barreredaction}}
+      </div>
+    </section>
+    <footer>
+      {{include page="PageFooter" doubleclic="1"}}
+    </footer>
+    {{linkjavascript}}
+  </body>
+</html>
